@@ -1,6 +1,6 @@
 h1. addisonj's dotfiles
 
-(Based on https://github.com/jferris/config_files)
+(install script and some ideas taken from https://github.com/jferris/config_files)
 
 h2. Install
 
@@ -9,6 +9,7 @@ Clone this repository, change into the cloned directory, and run:
 <pre>
 ./install.sh
 </pre>
+NOTE: This probably won't work on OSX. Will fix soon :)
 
 This will create symlinks for all config files in your home directory. You can
 safely run this file multiple times to update.
@@ -16,8 +17,36 @@ safely run this file multiple times to update.
 h2. Environment
 
 Linux (Ubuntu)
-Oh-my-zsh (with git and node.js stuff)
+Oh-my-zsh (with git and node.js modules)
 vim (javascript and c++ tailored)
+
+h2. VIM stuff
+
+h3. Code Completion
+
+javascript
+c++
+c
+
+h3. Syntax highlighting
+
+jade
+stylus
+JSON
+
+h3. Modules
+
+NERDTree
+syntastic
+tagbar
 
 Much more customization to come! 
 
+h2. Dependencies
+
+exuberant ctags
+clang
+
+h2. Thanks
+
+Many thanks to the developers whose submodules are used here!
