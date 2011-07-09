@@ -1,0 +1,57 @@
+# Read File Into Vector
+snippet readfile
+	std::vector<char> v;
+	if (FILE *${2:fp} = fopen(${1:"filename"}, "r")) {
+		char buf[1024];
+		while (size_t len = fread(buf, 1, sizeof(buf), $2))
+			v.insert(v.end(), buf, buf + len);
+		fclose($2);
+	}${3}
+# std::map
+snippet map
+	std::map<${1:key}, ${2:value}> map${3};
+# std::vector
+snippet vector
+	std::vector<${1:char}> v${2};
+# Namespace
+snippet ns
+	namespace ${1:`Filename('', 'my')`} {
+		${2}
+	} /* $1 */
+# Class
+snippet cl
+	class ${1:`Filename('$1_t', 'name')`} {
+	public:
+		$1 (${2:arguments});
+		virtual ~$1 ();
+	
+	private:
+		${3:/* data */}
+	};
+# Template
+snippet temp
+	template <typename ${1:T}>
+# Constructor (no template)
+snippet cons
+	${1:`Filename('', 'Class')`}::$1(${2:args}) {
+		${3:/* Constructor */}
+	}
+# Constructor with template
+snippet cont
+	template <typename ${1:T}>
+	${2:`Filename('', 'Class')`}<$1>::$2(${3:args}) {
+		${4:/* Constructor */}
+	}
+# Method
+snippet meth
+	${1:void} ${2:`Filename('', 'Class')`}::${3:Method}(${4:args}) {
+		${5:/* Method */}
+		return;
+	}
+# Method (with template)
+snippet mett
+	template <typename ${1:T}>
+	${2:void} ${3:`Filename('', 'Class')`}<$1>::${4:Method}(${5:args}) {
+		${6:/* Method */}
+		return;
+	}
