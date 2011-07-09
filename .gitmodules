@@ -1,0 +1,32 @@
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = "https://github.com/robbyrussell/oh-my-zsh.git"
+
+[submodule "JSON.vim"]
+	path = vim/JSON.vim
+	url = "https://github.com/vim-scripts/JSON.vim.git"
+
+
+[submodule "clange_complete"]
+	path = vim/clang_complete
+	url = "https://github.com/Rip-Rip/clang_complete.git"
+
+[submodule "jade.vim"]
+	path = vim/jade.vim
+	url = "https://github.com/vim-scripts/jade.vim"
+
+[submodule "NERDTree"]
+	path = vim/nerdtree
+	url = "https://github.com/scrooloose/nerdtree.git"
+
+[submodule "syntastic"]
+	path = vim/syntastic
+	url = "https://github.com/scrooloose/syntastic.git"
+
+[submodule "tagbar"]
+	path = vim/tagbar
+	url = "https://github.com/majutsushi/tagbar.git"
+
+[submodule "vim-stylus"]
+	path = vim/vim-stylus
+	url = "https://github.com/wavded/vim-stylus.git"
