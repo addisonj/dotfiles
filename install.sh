@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Credit goes to https://github.com/jferris for this script, slightly tweaked to work better with ubuntu
 cutstring="DO NOT EDIT BELOW THIS LINE"
 
 for name in *; do
