@@ -6,10 +6,9 @@
 	path = vim/bundle/JSON.vim
 	url = "https://github.com/vim-scripts/JSON.vim.git"
 
-
-[submodule "clange_complete"]
-	path = vim/bundle/clang_complete
-	url = "https://github.com/Rip-Rip/clang_complete.git"
+[submodule "OmniCppComplete"]
+	path = vim/bundle/OmniCppComplete
+	url = "https://github.com/vim-scripts/OmniCppComplete.git"
 
 [submodule "jade.vim"]
 	path = vim/bundle/jade.vim

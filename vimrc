@@ -18,3 +18,5 @@ map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab|set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType css set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 autocmd FileType cpp set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
+" Recursively add tags from pwd to /
+set tags=./tags;/
