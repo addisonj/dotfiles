@@ -21,3 +21,7 @@ map <C-F12> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab|set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType css set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 autocmd FileType cpp set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
+" clang stuff
+let g:clang_hl_errors=0
+let g:clang_snippets_engine="snipmate"
+let g:clang_user_options="|| exit 0"

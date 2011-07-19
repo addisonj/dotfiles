@@ -7,7 +7,7 @@
 	url = "https://github.com/vim-scripts/JSON.vim.git"
 
 [submodule "clange_complete"]
-	path = vim/bundle/clange_complete
+	path = vim/bundle/clang_complete
 	url = "https://github.com/Rip-Rip/clang_complete.git"
 
 [submodule "jade.vim"]
