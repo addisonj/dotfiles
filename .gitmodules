@@ -26,6 +26,10 @@
 	path = vim/bundle/tagbar
 	url = "https://github.com/majutsushi/tagbar.git"
 
+[submodule "vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = "https://github.com/altercation/vim-colors-solarized.git"
+
 [submodule "vim-stylus"]
 	path = vim/bundle/vim-stylus
 	url = "https://github.com/wavded/vim-stylus.git"

@@ -2,6 +2,15 @@
 filetype off 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+" theme
+let g:solarized_termtrans=1
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+colorscheme solarized
+set nu
 " indent Stuff
 set autoindent
 filetype on
@@ -14,7 +23,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_cpp_check_header = 1
 " Mappings and bindings
-set pastetoggle=<F2>
+set pastetoggle=<F3>
 map <F3> :NERDTreeToggle<CR>
 map <C-F12> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 " File Type defs
