@@ -42,6 +42,11 @@ snippet cont
 	${2:`Filename('', 'Class')`}<$1>::$2(${3:args}) {
 		${4:/* Constructor */}
 	}
+# Destructor (no template)
+snippet dest
+	${1:`Filename('', 'Class')`}::~$1() {
+		${3:/* Constructor */}
+	}
 # Method
 snippet meth
 	${1:void} ${2:`Filename('', 'Class')`}::${3:Method}(${4:args}) {
