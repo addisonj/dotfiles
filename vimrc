@@ -34,3 +34,6 @@ autocmd FileType cpp set tabstop=2|set shiftwidth=2|set softtabstop=2|set expand
 let g:clang_hl_errors=0
 let g:clang_snippets_engine="snipmate"
 let g:clang_user_options="|| exit 0"
+" Stuff for latex-suite
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
