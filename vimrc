@@ -35,5 +35,5 @@ let g:clang_hl_errors=0
 let g:clang_snippets_engine="snipmate"
 let g:clang_user_options="|| exit 0"
 " Stuff for latex-suite
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
