@@ -11,6 +11,9 @@ else
 endif
 colorscheme solarized
 set nu
+
+" Font
+set guifont=Inconsolata:h16
 " indent Stuff
 set autoindent
 filetype on
