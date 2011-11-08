@@ -22,6 +22,7 @@ set statusline+=%*
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_user_config = 1
 " Mappings and bindings
 set pastetoggle=<F3>
 map <F3> :NERDTreeToggle<CR>
