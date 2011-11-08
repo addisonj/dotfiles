@@ -20,8 +20,7 @@
 
 [submodule "syntastic"]
 	path = vim/bundle/syntastic
-	url = "https://github.com/scrooloose/syntastic.git"
-
+	url = "git@github.com:addisonj/dotfiles.git"
 [submodule "tagbar"]
 	path = vim/bundle/tagbar
 	url = "https://github.com/majutsushi/tagbar.git"

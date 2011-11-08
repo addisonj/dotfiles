@@ -20,7 +20,7 @@ snippet ns
 	} /* $1 */
 # Class
 snippet cl
-	class ${1:`Filename('$1_t', 'name')`} {
+	class ${1:`Filename('$1', 'name')`} {
 	public:
 		$1 (${2:arguments});
 		virtual ~$1 ();
@@ -28,6 +28,19 @@ snippet cl
 	private:
 		${3:/* data */}
 	};
+# Class header
+snippet clh
+	#ifndef ${4: 240_`toupper('$1')`_H }
+	#define $4
+	class ${1:`Filename('$1', 'name')`} {
+	public:
+		$1 (${2:arguments});
+		virtual ~$1 ();
+	
+	private:
+		${3:/* data */}
+	};
+	#endif
 # Template
 snippet temp
 	template <typename ${1:T}>

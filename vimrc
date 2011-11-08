@@ -25,6 +25,7 @@ set statusline+=%*
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_user_config = 1
 " Mappings and bindings
 set pastetoggle=<F3>
 map <F3> :NERDTreeToggle<CR>
@@ -37,5 +38,6 @@ autocmd FileType cpp set tabstop=2|set shiftwidth=2|set softtabstop=2|set expand
 let g:clang_hl_errors=0
 let g:clang_snippets_engine="snipmate"
 let g:clang_user_options="|| exit 0"
+" Stuff for latex-suite
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
