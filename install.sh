@@ -12,7 +12,12 @@ for name in *; do
         let "cutline = $cutline - 1"
         echo "Updating $target"
         head -n $cutline "$target" > update_tmp
-        startline=`tac "$name" | grep -n -m1 "$cutstring" | sed "s/:.*//"`
+	platform=`uname`
+	if [[ "$platform" == 'Darwin' ]]; then 
+		startline=`tail -r "$name" | grep -n -m1 "$cutstring" | sed "s/:.*//"`
+	else
+		startline=`tac "$name" | grep -n -m1 "$cutstring" | sed "s/:.*//"`
+	fi
         if [[ -n $startline ]]; then
           tail -n $startline "$name" >> update_tmp
         else
