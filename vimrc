@@ -5,7 +5,7 @@ call pathogen#helptags()
 " theme
 let g:solarized_termtrans=1
 if has('gui_running')
-    set background=light
+    set background=dark
 else
     set background=dark
 endif

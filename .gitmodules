@@ -33,3 +33,6 @@
 [submodule "vim-stylus"]
 	path = vim/bundle/vim-stylus
 	url = "https://github.com/wavded/vim-stylus.git"
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = git://git.wincent.com/command-t.git
