@@ -20,7 +20,7 @@ snippet ns
 	} /* $1 */
 # Class
 snippet cl
-	class ${1:`Filename('$1_t', 'name')`} {
+	class ${1:`Filename('$1', 'name')`} {
 	public:
 		$1 (${2:arguments});
 		virtual ~$1 ();
@@ -60,3 +60,23 @@ snippet mett
 		${6:/* Method */}
 		return;
 	}
+# iterator
+snippet iter
+	${1:vector}<${2:string}>::iterator it;
+	for(it = ${3:obj}.begin(); it != $3.end(); it++) {
+		${5: /*do stuff*/ }
+	}
+# reverse iterator
+snippet riter
+	${1:vector}<${2:string}>::iterator rit;
+	for(rit = ${3:obj}.rbegin(); it != $3.rend(); it++) {
+		${5: /*do stuff*/ }
+	}
+# compator
+snippet compa
+	class ${1:Class}Comparator {
+	public:
+		bool operator() (const $1 * a, const $1 * b) {
+			${2: return ( (*a) < (*b) ); }
+		}
+	};
