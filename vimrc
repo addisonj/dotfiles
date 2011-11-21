@@ -33,7 +33,7 @@ set pastetoggle=<F3>
 map <F5> :NERDTreeToggle<CR>
 map <C-F12> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 " File Type defs
-autocmd FileType javascript set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab|set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType javascript set tabstop=4|set shiftwidth=4|set softtabstop=4|set expandtab|set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType css set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 autocmd FileType cpp set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 " clang stuff

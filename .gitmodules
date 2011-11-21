@@ -21,6 +21,7 @@
 [submodule "syntastic"]
 	path = vim/bundle/syntastic
 	url = "https://github.com/scrooloose/syntastic.git"
+
 [submodule "tagbar"]
 	path = vim/bundle/tagbar
 	url = "https://github.com/majutsushi/tagbar.git"
@@ -29,9 +30,18 @@
 	path = vim/bundle/vim-colors-solarized
 	url = "https://github.com/altercation/vim-colors-solarized.git"
 
+[submodule "vim-less"]
+	path = vim/bundle/vim-less
+	url = "https://github.com/groenewege/vim-less.git"
+
 [submodule "vim-stylus"]
 	path = vim/bundle/vim-stylus
 	url = "https://github.com/wavded/vim-stylus.git"
+
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
+	
+[submodule "vim/bundle/vim-jst"]
+	path = vim/bundle/vim-jst
+	url = https://github.com/briancollins/vim-jst.git
