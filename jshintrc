@@ -10,7 +10,7 @@
     "node"          : true,
     "rhino"         : false,
     "couch"         : false,
-    "wsh"           : true,   // Windows Scripting Host.
+    "wsh"           : false,   // Windows Scripting Host.
 
     "jquery"        : true,
     "prototypejs"   : false,
@@ -18,7 +18,7 @@
     "dojo"          : false,
 
     "predef"        : [  // Extra globals.
-        "THREE", "App", "requestAnimationFrame", "Stats", "Backbone", "_"
+        "THREE", "App", "requestAnimationFrame", "Stats", "Backbone", "_", "define"
     ],
 
 
@@ -65,7 +65,8 @@
     "onevar"        : false,  // Allow only one `var` statement per function.
     "plusplus"      : false,  // Prohibit use of `++` & `--`.
     "sub"           : false,  // Tolerate all forms of subscript notation besides dot notation e.g. `dict['key']` instead of `dict.key`.
-    "trailing"      : true,   // Prohibit trailing whitespaces.
-    "white"         : false    // Check against strict whitespace rules.
+    "trailing"      : false,   // Prohibit trailing whitespaces.
+    "white"         : false,    // Check against strict whitespace rules.
+    "smarttabs"     : true      // does stuff with tabs and spaces
 }
 

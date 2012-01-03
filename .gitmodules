@@ -38,10 +38,10 @@
 	path = vim/bundle/vim-stylus
 	url = "https://github.com/wavded/vim-stylus.git"
 
-[submodule "vim/bundle/command-t"]
-	path = vim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
-	
+[submodule "vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = "https://github.com/pangloss/vim-javascript"
+
 [submodule "vim/bundle/vim-jst"]
 	path = vim/bundle/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
