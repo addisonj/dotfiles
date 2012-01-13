@@ -28,6 +28,8 @@ set statusline+=%*
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_cpp_check_header = 1
+let g:syntastic_mode_map = { 'mode': 'active',
+			\ 'passive_filetypes': ['javascript'] }
 " Mappings and bindings
 set pastetoggle=<F3>
 map <F5> :NERDTreeToggle<CR>
