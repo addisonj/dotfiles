@@ -1,4 +1,6 @@
 .*.swp
+*.gch
+.swp
 .*.swo
 *.scratch.*
 .DS_Store

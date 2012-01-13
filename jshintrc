@@ -18,7 +18,15 @@
     "dojo"          : false,
 
     "predef"        : [  // Extra globals.
-        "THREE", "App", "requestAnimationFrame", "Stats", "Backbone", "_", "define"
+        "THREE", 
+		"App", 
+		"requestAnimationFrame", 
+		"Stats", 
+		"Backbone", 
+		"_", 
+		"define", 
+		"escape",
+		"io"
     ],
 
 
