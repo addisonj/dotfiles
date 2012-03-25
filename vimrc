@@ -15,6 +15,8 @@ endif
 colorscheme solarized
 set nu
 
+syntax enable
+
 " Font
 set guifont=Inconsolata:h16
 " indent Stuff

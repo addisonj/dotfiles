@@ -75,6 +75,7 @@
     "sub"           : false,  // Tolerate all forms of subscript notation besides dot notation e.g. `dict['key']` instead of `dict.key`.
     "trailing"      : false,   // Prohibit trailing whitespaces.
     "white"         : false,    // Check against strict whitespace rules.
-    "smarttabs"     : true      // does stuff with tabs and spaces
+    "smarttabs"     : true,     // does stuff with tabs and spaces
+    "laxcomma"      : true
 }
 
