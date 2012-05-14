@@ -23,6 +23,11 @@ set guifont=Inconsolata:h16
 set autoindent
 filetype on
 filetype indent on
+" default stuff
+set ts=2
+set sts=2
+set sw=2
+set expandtab
 " Syntastic (Errors and what not)
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -35,8 +40,6 @@ set pastetoggle=<F3>
 map <F5> :NERDTreeToggle<CR>
 map <C-F12> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 " File Type defs
-autocmd FileType javascript set tabstop=4|set shiftwidth=4|set softtabstop=4|set expandtab|set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType css set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 autocmd FileType cpp set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 " clang stuff
 let g:clang_hl_errors=0
@@ -45,3 +48,12 @@ let g:clang_user_options="|| exit 0"
 " Stuff for latex-suite
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+
+" js/web stuff
+autocmd FileType set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType css set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
+
+" coffeescript stuff
+autocmd FileType coffee set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
+"autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+"autocmd BufWritePost *.coffee silent CoffeeLint! | cwindow | redraw!
