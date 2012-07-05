@@ -16,6 +16,8 @@ set nu
 
 syntax enable
 
+set listchars=tab:\ \ ,trail:·,extends:>,precedes:\<
+
 " Font
 set guifont=Inconsolata:h16
 " indent Stuff
@@ -34,7 +36,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_mode_map = { 'mode' : 'active',
-                           \ 'passive_filetypes' : ['coffee'] }
+                           \ 'passive_filetypes' : ['coffee', 'html'] }
 " Mappings and bindings
 set pastetoggle=<F3>
 map <F5> :NERDTreeToggle<CR>
@@ -48,5 +50,6 @@ let g:clang_user_options="|| exit 0"
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%121v.\+/
 
-autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+" coffee-script stuff
+let coffee_lint_options = '-f ~/.coffee-lint.json'
 autocmd BufWritePost *.coffee silent CoffeeLint! | cwindow | redraw!

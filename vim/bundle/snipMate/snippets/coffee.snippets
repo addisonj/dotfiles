@@ -66,4 +66,4 @@ snippet cberr
 	return cb err if err?
 
 snippet senderr
-	return res.send err.message if err?
+	return res.send err.message, 500 if err?
