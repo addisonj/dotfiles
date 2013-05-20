@@ -1,8 +1,8 @@
 alias g="git"
 alias tlf="tail -f"
-alias n="node"
 alias na="node app.js"
 alias npi="npm install"
 alias fixmongo="sudo rm /var/lib/mongodb/mongod.lock && sudo mongod --repair && sudo service mongodb start"
 alias nm="nodemon"
 alias nma="nodemon app.js"
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'

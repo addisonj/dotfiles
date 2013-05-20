@@ -1,55 +1,90 @@
 " enable per-directory .vimrc files
-set exrc			
+set exrc
 set secure
-" Pathogen Setup!
-filetype off 
-call pathogen#infect()
+
+" stuff for vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" vundles
+Bundle 'gmarik/vundle'
+
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'mattn/gist-vim'
+Bundle 'godlygeek/tabular'
+Bundle 'tpope/vim-surround'
+Bundle 'nathanaelkane/vim-indent-guides'
+
+" lang specific
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'groenewege/vim-less'
+Bundle 'tpope/vim-markdown'
+
 " theme
 let g:solarized_termtrans=1
 if has('gui_running')
     set background=dark
+    set guioptions=egmrt
+    set guioptions-=r
 else
     set background=dark
 endif
 colorscheme solarized
+" general
+set hlsearch
+set incsearch
+set ignorecase
 set nu
+set smartindent
 
-syntax enable
+" indent Stuff
+filetype plugin indent on
 
+
+" kill training whitespace
 set listchars=tab:\ \ ,trail:·,extends:>,precedes:\<
 
-" Font
-set guifont=Inconsolata:h16
-" indent Stuff
-filetype on
-filetype plugin indent on
+" language stuff
+autocmd BufNewFile,BufRead *.template set filetype=json
+autocmd BufNewFile,BufRead *.coffin set filetype=coffee
+autocmd BufWritePre * :%s/\s\+$//e
+
 " default stuff
+syntax enable
 set ts=2
 set sts=2
 set sw=2
 set expandtab
-" Syntastic (Errors and what not)
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_mode_map = { 'mode' : 'active',
-                           \ 'passive_filetypes' : ['coffee', 'html'] }
+" Font
+set guifont=Inconsolata:h16
+
 " Mappings and bindings
+let mapleader=","
 set pastetoggle=<F3>
+" clear search buffer
+nmap <silent> <leader>cl :let @/=""<CR>
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" highlight long lines
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%121v.\+/
+
+
+" plugin specific
+" ctrlp
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+map <leader>p :CtrlP<CR>
+" NerdTree
 map <F5> :NERDTreeToggle<CR>
-map <C-F12> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
-
-" clang stuff
-let g:clang_hl_errors=0
-let g:clang_snippets_engine="snipmate"
-let g:clang_user_options="|| exit 0"
-
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%121v.\+/
-
-" coffee-script stuff
+" vim-coffee-script
 let coffee_lint_options = '-f ~/.coffee-lint.json'
-autocmd BufWritePost *.coffee silent CoffeeLint! | cwindow | redraw!

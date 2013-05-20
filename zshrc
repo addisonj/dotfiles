@@ -41,7 +41,25 @@ plugins=(deb vi-mode git ruby npm node)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/home/addisonj/.rvm/gems/ruby-1.9.2-p180/bin:/home/addisonj/.rvm/gems/ruby-1.9.2-p180@global/bin:/home/addisonj/.rvm/rubies/ruby-1.9.2-p180/bin:/home/addisonj/.rvm/bin:/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+# source rbenv
+eval "$(rbenv init -)"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# stuff for nvm
+. ~/nvm/nvm.sh
+
+# Z for moving around
+. `brew --prefix`/etc/profile.d/z.sh
+function precmd () {
+ z --add "$(pwd -P)"
+}
+#AWS STUFF
+if [ -e "$HOME/.env_vars" ]; then
+  source "$HOME/.env_vars"
+fi
+
+export PLAN9=/usr/local/plan9 export PLAN9
+export PATH=/usr/local/sbin:$PATH:$PLAN9/bin export PATH
+
+# Set the editor
+export EDITOR=vim

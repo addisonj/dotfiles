@@ -13,7 +13,7 @@ for name in *; do
         echo "Updating $target"
         head -n $cutline "$target" > update_tmp
 	platform=`uname`
-	if [[ "$platform" == 'Darwin' ]]; then 
+	if [[ "$platform" == 'Darwin' ]]; then
 		startline=`tail -r "$name" | grep -n -m1 "$cutstring" | sed "s/:.*//"`
 	else
 		startline=`tac "$name" | grep -n -m1 "$cutstring" | sed "s/:.*//"`
@@ -39,3 +39,7 @@ for name in *; do
     fi
   fi
 done
+
+# install vundle and then run it!
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+vim +BundleInstall +qall
