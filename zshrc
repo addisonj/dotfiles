@@ -37,7 +37,7 @@ export DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(deb vi-mode git ruby npm node)
+plugins=(deb vi-mode git ruby npm node knife osx urltools go golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,6 +60,12 @@ fi
 
 export PLAN9=/usr/local/plan9 export PLAN9
 export PATH=/usr/local/sbin:$PATH:$PLAN9/bin export PATH
+
+export GOPATH=/Users/addisonj/golang
+export GOROOT=/usr/local/Cellar/go/1.1
+export GOBIN=$GOROOT/bin
+export PATH=$GOBIN:$PATH
+
 
 # Set the editor
 export EDITOR=vim

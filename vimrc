@@ -19,12 +19,15 @@ Bundle 'mattn/gist-vim'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-surround'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'ervandew/supertab'
 
 " lang specific
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-markdown'
+"Bundle 'jnwhiteh/vim-golang'
+Bundle 'Blackrush/vim-gocode'
 
 " theme
 let g:solarized_termtrans=1
@@ -33,7 +36,7 @@ if has('gui_running')
     set guioptions=egmrt
     set guioptions-=r
 else
-    set background=dark
+    set background=light
 endif
 colorscheme solarized
 " general
@@ -44,6 +47,7 @@ set nu
 set smartindent
 
 " indent Stuff
+set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 
 
@@ -54,6 +58,7 @@ set listchars=tab:\ \ ,trail:·,extends:>,precedes:\<
 autocmd BufNewFile,BufRead *.template set filetype=json
 autocmd BufNewFile,BufRead *.coffin set filetype=coffee
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre *.go :Fmt
 
 " default stuff
 syntax enable
@@ -84,7 +89,13 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 map <leader>p :CtrlP<CR>
+let g:ctrlp_max_files = 10000
 " NerdTree
 map <F5> :NERDTreeToggle<CR>
 " vim-coffee-script
 let coffee_lint_options = '-f ~/.coffee-lint.json'
+" golang stuff
+map <silent> <leader>f :Fmt<CR>
+" supertab
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:SuperTabClosePreviewOnPopupClose = 1
