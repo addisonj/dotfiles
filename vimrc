@@ -43,6 +43,7 @@ colorscheme solarized
 set hlsearch
 set incsearch
 set ignorecase
+set smartcase
 set nu
 set smartindent
 

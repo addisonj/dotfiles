@@ -37,8 +37,8 @@ export DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(deb vi-mode git ruby npm node knife osx urltools go golang)
 
+plugins=(deb git ruby npm node knife osx urltools go golang)
 source $ZSH/oh-my-zsh.sh
 
 # source rbenv
@@ -66,6 +66,8 @@ export GOROOT=/usr/local/Cellar/go/1.1
 export GOBIN=$GOROOT/bin
 export PATH=$GOBIN:$PATH
 
+#java stuff
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 
 # Set the editor
 export EDITOR=vim
