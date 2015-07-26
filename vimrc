@@ -1,6 +1,7 @@
 " enable per-directory .vimrc files
 set exrc
 set secure
+set backspace=indent,eol,start
 
 " stuff for vundle
 set nocompatible
@@ -10,7 +11,9 @@ call vundle#rc()
 
 " vundles
 Bundle 'gmarik/vundle'
+Bundle 'Shougo/neocomplete.vim'
 
+Bundle 'bling/vim-airline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
@@ -19,15 +22,21 @@ Bundle 'mattn/gist-vim'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-surround'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'ervandew/supertab'
 
 " lang specific
 Bundle 'kchmck/vim-coffee-script'
+Bundle "pangloss/vim-javascript"
 Bundle 'digitaltoad/vim-jade'
 Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-markdown'
-"Bundle 'jnwhiteh/vim-golang'
-Bundle 'Blackrush/vim-gocode'
+Bundle 'fatih/vim-go'
+Bundle 'elzr/vim-json'
+Bundle 'slim-template/vim-slim.git'
+" latex
+Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+" more latex stuff
+let g:Tex_ViewRule_ps = 'open -a Preview'
+let g:Tex_ViewRule_pdf = 'open -a Preview'
 
 " theme
 let g:solarized_termtrans=1
@@ -52,7 +61,7 @@ set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 
 
-" kill training whitespace
+" kill trailing whitespace
 set listchars=tab:\ \ ,trail:·,extends:>,precedes:\<
 
 " language stuff
@@ -97,6 +106,56 @@ map <F5> :NERDTreeToggle<CR>
 let coffee_lint_options = '-f ~/.coffee-lint.json'
 " golang stuff
 map <silent> <leader>f :Fmt<CR>
-" supertab
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-let g:SuperTabClosePreviewOnPopupClose = 1
+let g:go_fmt_command = "goimports"
+" airline
+let g:airline#extensions#tabline#enabled = 1
+set laststatus=2
+" neo autocompelte
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.go = '\h\w*'
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+let g:echodoc_enable_at_startup = 1
