@@ -1,0 +1,31 @@
+function haveApp() {
+  command -v "$1" >/dev/null 2>&1
+}
+UNAME=$(uname)
+
+if [ "$UNAME" = "Darwin" ]; then
+  test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+else
+  export PATH="$HOME/.linuxbrew/bin:$PATH"
+fi
+
+# source rbenv
+if haveApp rbenv; then
+  eval "$(rbenv init -)"
+fi
+
+# stuff for nvm
+test -e "${HOME}"/.nvm/nvm.sh && source "${HOME}"/.nvm/nvm.sh
+
+# Z for moving around
+if haveApp brew; then
+  if haveApp z; then
+    function precmd () {
+     z --add "$(pwd -P)"
+    }
+    . $(brew --prefix)/etc/profile.d/z.sh
+  fi
+fi
+# ADD LOCAL CONFIGURATION HERE
+
+# DO NOT EDIT BELOW THIS LINE

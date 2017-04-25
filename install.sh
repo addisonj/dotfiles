@@ -1,8 +1,10 @@
 #!/bin/bash
 
+set -e
 # Credit goes to https://github.com/jferris for this script, slightly tweaked to work better with ubuntu
 cutstring="DO NOT EDIT BELOW THIS LINE"
 
+git submodule init && git submodule update || true
 for name in *; do
   target="$HOME/.$name"
   if [ -e $target ]; then
@@ -41,5 +43,5 @@ for name in *; do
 done
 
 # install vundle and then run it!
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle >/dev/null 2>&1 || true
 vim +BundleInstall +qall

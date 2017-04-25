@@ -6,6 +6,16 @@ if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 
+# configure apps
+if [ -e "$HOME/.app_env" ]; then
+  source "$HOME/.app_env"
+fi
+
+# env vars, not tracked by source control
+if [ -e "$HOME/.env_vars" ]; then
+  source "$HOME/.env_vars"
+fi
+
 # Stat my options
 # ignore duplicate entries in history
 setopt histignoredups
@@ -41,35 +51,5 @@ export DISABLE_AUTO_UPDATE="true"
 plugins=(deb git ruby npm node knife osx urltools go golang)
 source $ZSH/oh-my-zsh.sh
 
-# source rbenv
-eval "$(rbenv init -)"
-
-
-# stuff for nvm
-. ~/.nvm/nvm.sh
-
-# Z for moving around
-. `brew --prefix`/etc/profile.d/z.sh
-function precmd () {
- z --add "$(pwd -P)"
-}
-#AWS STUFF
-if [ -e "$HOME/.env_vars" ]; then
-  source "$HOME/.env_vars"
-fi
-
-export PLAN9=/usr/local/plan9 export PLAN9
-export PATH=/usrc/local/bin:/usr/local/sbin:$PATH:$PLAN9/bin export PATH
-
-export GOPATH=/Users/addisonj/golang
-export GOROOT=/usr/local/Cellar/go/1.1
-export GOBIN=$GOROOT/bin
-export PATH=$GOBIN:$PATH
-
-#java stuff
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
 # Set the editor
 export EDITOR=vim
-
-test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh

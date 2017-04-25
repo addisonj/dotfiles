@@ -9,3 +9,6 @@ alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 alias dcp='docker-compose'
 alias bnode='babel-node'
 alias emacs='/usr/local/bin/emacs'
+# ADD LOCAL CONFIGURATION HERE
+
+# DO NOT EDIT BELOW THIS LINE
