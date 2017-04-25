@@ -46,7 +46,7 @@ eval "$(rbenv init -)"
 
 
 # stuff for nvm
-. ~/nvm/nvm.sh
+. ~/.nvm/nvm.sh
 
 # Z for moving around
 . `brew --prefix`/etc/profile.d/z.sh
@@ -59,7 +59,7 @@ if [ -e "$HOME/.env_vars" ]; then
 fi
 
 export PLAN9=/usr/local/plan9 export PLAN9
-export PATH=/usr/local/sbin:$PATH:$PLAN9/bin export PATH
+export PATH=/usrc/local/bin:/usr/local/sbin:$PATH:$PLAN9/bin export PATH
 
 export GOPATH=/Users/addisonj/golang
 export GOROOT=/usr/local/Cellar/go/1.1
@@ -67,7 +67,9 @@ export GOBIN=$GOROOT/bin
 export PATH=$GOBIN:$PATH
 
 #java stuff
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 # Set the editor
 export EDITOR=vim
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh

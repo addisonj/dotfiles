@@ -20,6 +20,8 @@ Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-surround'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'ervandew/supertab'
+Plugin 'rizzatti/dash.vim'
+Plugin 'rust-lang/rust.vim'
 
 " lang specific
 Bundle 'kchmck/vim-coffee-script'
@@ -28,6 +30,11 @@ Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-markdown'
 "Bundle 'jnwhiteh/vim-golang'
 Bundle 'Blackrush/vim-gocode'
+Bundle 'elzr/vim-json'
+Bundle 'othree/yajs.vim'
+Bundle 'rschmukler/pangloss-vim-indent'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'markcornick/vim-terraform'
 
 " theme
 let g:solarized_termtrans=1
@@ -47,6 +54,8 @@ set smartcase
 set nu
 set smartindent
 
+" gdiff
+set diffopt+=vertical
 " indent Stuff
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
@@ -58,8 +67,10 @@ set listchars=tab:\ \ ,trail:·,extends:>,precedes:\<
 " language stuff
 autocmd BufNewFile,BufRead *.template set filetype=json
 autocmd BufNewFile,BufRead *.coffin set filetype=coffee
+autocmd BufNewFile,BufRead *.es6 set filetype=javascript
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWritePre *.go :Fmt
+autocmd BufNewFile,BufRead *.csv set noeol
 
 " default stuff
 syntax enable
